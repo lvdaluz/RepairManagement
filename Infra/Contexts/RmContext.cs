@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Contexts
 {
@@ -7,6 +8,8 @@ namespace Infra.Contexts
         public RmContext(DbContextOptions<RmContext> options) : base(options)
         {
         }
+
+        public DbSet<People> People { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

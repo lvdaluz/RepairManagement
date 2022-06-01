@@ -1,4 +1,6 @@
-﻿using Infra.Contexts;
+﻿using Domain.Interfaces;
+using Infra.Contexts;
+using Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +16,8 @@ namespace Api.Extensions
                                                 x => x.MigrationsAssembly(typeof(RmContext).Assembly.FullName))
                                                 .EnableSensitiveDataLogging()
                                             );
+
+            services.AddScoped<IPeopleRepository, PeopleRepository>();
 
             return services;
         }

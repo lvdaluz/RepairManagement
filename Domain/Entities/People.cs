@@ -11,6 +11,8 @@ namespace Domain.Entities
         public string Cpf { get; set; }
         public string Logradouro { get; set; }
         public string Cep { get; set; }
+        public virtual Technician Technician { get; set; }
+        public virtual Client Client { get; set; }
 
         public bool IsValid() =>
             Name?.Length >= 3
