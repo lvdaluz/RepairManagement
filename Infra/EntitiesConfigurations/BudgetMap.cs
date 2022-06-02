@@ -34,6 +34,9 @@ namespace Infra.EntitiesConfigurations
             builder.HasOne(b => b.TechnicianWhoRepair)
                 .WithMany(b => b.Repairs)
                 .HasForeignKey(b => b.RepairBy);
+
+            builder.HasMany(b => b.Parts)
+                .WithMany(b => b.Budgets);
         }
     }
 }

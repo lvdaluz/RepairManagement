@@ -3,15 +3,17 @@ using System;
 using Infra.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infra.Migrations
 {
     [DbContext(typeof(RmContext))]
-    partial class RmContextModelSnapshot : ModelSnapshot
+    [Migration("20220602135047_Create missing tables")]
+    partial class Createmissingtables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

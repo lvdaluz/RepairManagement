@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Domain.Entities
 {
@@ -20,6 +21,7 @@ namespace Domain.Entities
         public virtual Technician TechnicianWhoCreated { get; set; }
         public int? RepairBy { get; set; }
         public virtual Technician TechnicianWhoRepair { get; set; }
+        public virtual IList<Parts> Parts { get; set; }
 
         public bool IsValid() =>
             !string.IsNullOrWhiteSpace(Product)
